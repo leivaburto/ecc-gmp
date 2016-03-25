@@ -1,0 +1,9 @@
+gcc -o fp.o -c fp.c -lgmp
+gcc -o ec.o -c ec.c -lgmp
+gcc -o naf.o -c naf.c -lgmp -lm
+gcc -o wnaf.o -c wnaf.c -lgmp -lm
+gcc -o sm.o -c sm.c -lgmp -lm
+ar rc libgecc.a *.o
+
+
+gcc test.c -L../src/ -lgecc -lgmp -lm -o test
